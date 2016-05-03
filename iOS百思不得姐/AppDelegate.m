@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "XZHMainBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //创建window
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //设置根控制器为自定义tarbar
+    self.window.rootViewController = [[XZHMainBarController alloc]init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
